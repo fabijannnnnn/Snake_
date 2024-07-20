@@ -25,6 +25,7 @@ snake
 # Ignore editor and OS files
 *.swp
 *~
+.idea
 .zed
 .DS_Store
 Thumbs.db
