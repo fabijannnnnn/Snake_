@@ -1,0 +1,28 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ignore object files
+*.o
+
+# Ignore executables
+snake
+
+# Ignore other common build files
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Ignore editor and OS files
+*.swp
+*~
+.zed
+.DS_Store
+Thumbs.db
