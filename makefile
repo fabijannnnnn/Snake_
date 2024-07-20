@@ -1,5 +1,13 @@
-CC=g++
-all: output
+CC = g++
+CFLAGS = -lcurses
 
-output: main.cpp window.h
-	$(CC) -o main main.cpp -lcurses
+all: snake
+
+snake: main.o
+	$(CC) -o snake main.o $(CFLAGS)
+
+main.o: main.cpp window.h
+	$(CC) -c main.cpp
+
+clean:
+	rm -f snake main.o
