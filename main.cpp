@@ -23,5 +23,5 @@ int main(int argc, char ** argv)
     getch();
     endwin();
 
-    std::cout << "hello ni66as\n";
+    std::cout << "hello there\n";
 }

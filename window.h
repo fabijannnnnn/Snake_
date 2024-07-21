@@ -6,13 +6,14 @@
 class Playground
 {
 public:
-    Playground(int height, int width){
-        int yMax, xMax;
-        getmaxyx(stdscr, yMax, xMax);
+    Playground()
+    {
+        construct(0, 0);
+    }
 
-        pg_win = newwin(height,width, (yMax/2)-(height/2), (xMax/2)-(width/2));
-
-        addBorder();
+    Playground(int height, int width)
+    {
+        construct(height, width);
     }
 
     void init()
@@ -48,4 +49,14 @@ public:
 
 private:
     WINDOW * pg_win;
+
+    void construct(int height, int width)
+    {
+        int yMax, xMax;
+        getmaxyx(stdscr, yMax, xMax);
+
+        pg_win = newwin(height,width, (yMax/2)-(height/2), (xMax/2)-(width/2));
+
+        addBorder();
+    }
 };
