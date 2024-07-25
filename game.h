@@ -34,11 +34,11 @@ public:
 
         pg.add(Drawable(10, 10, '@'));
 
-        if(fruit != NULL)
+        if(fruit != nullptr)
         {
             pg.add(Empty(fruit->getY(), fruit->getX()));
             delete fruit;
-            fruit = NULL;
+            fruit = nullptr;
         }
 
         fruit = new Fruit(y, x);

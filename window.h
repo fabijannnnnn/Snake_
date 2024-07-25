@@ -44,10 +44,10 @@ public:
 
     void getEmptyCoordinates(int &y, int &x)
     {
+        do{
         y = rand() % height;
         x = rand() % width;
-
-        while(mvwinch(pg_win, y, x) != ' ')
+        } while(mvwinch(pg_win, y, x) != ' ')
             ;
     }
 
