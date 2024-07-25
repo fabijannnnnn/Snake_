@@ -1,6 +1,6 @@
 #include <curses.h>
 #include <iostream>
-#include "window.h"
+#include "game.h"
 
 #define PG_SIZE 20
 #define PG_COLLUMNS PG_SIZE
@@ -13,12 +13,18 @@ int main(int argc, char ** argv)
     initscr();
     refresh();
 
-    Playground pg(PG_COLLUMNS, PG_ROWS);
-    pg.init();
+    noecho();
 
-    pg.addAt(10, 10, 'O');
+    SnakeGame game(PG_COLLUMNS, PG_ROWS);
 
-    pg.refreshWin();
+    while (!game.isOver())
+    {
+        game.handleInput();
+
+        game.updateState();
+
+        game.redraw();
+    }
 
     getch();
     endwin();
