@@ -6,6 +6,7 @@ class Playground
 {
 
 public:
+
     Playground()
     {
         construct(0, 0);

@@ -5,21 +5,36 @@
 #include "fruit.h"
 #include <cstddef>
 #include <ctime>
+#include "snake.h"
 
 class SnakeGame
 {
+    Playground pg;
+    bool game_over;
+    Fruit* fruit;
 public:
-    SnakeGame(int height, int width) : fruit(nullptr)
+
+    // SnakeGame(int height, int width) : fruit(nullptr)
+    // {
+    //     pg = Playground(height, width);
+    // }
+
+    SnakeGame(int height, int width)
     {
         pg = Playground(height, width);
-        pg.init();
-        game_over = false;
-        srand(time(NULL));
+        initialize();
     }
 
     ~SnakeGame()
     {
         delete fruit;
+    }
+
+    void initialize()
+    {
+        pg.init();
+        game_over = false;
+        srand(time(NULL));
     }
 
     void handleInput()
@@ -55,8 +70,4 @@ public:
         return game_over;
     }
 
-private:
-    Playground pg;
-    bool game_over;
-    Fruit* fruit;
 };

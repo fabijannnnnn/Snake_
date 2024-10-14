@@ -4,6 +4,7 @@
 class Drawable
 {
 public:
+
     Drawable()
     {
         x = y = 0;

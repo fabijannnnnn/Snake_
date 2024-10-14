@@ -6,6 +6,7 @@ class Fruit : public Drawable
 {
 
 public:
+
     Fruit(int y, int x)
     {
         this->y = y;
